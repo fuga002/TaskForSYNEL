@@ -36,6 +36,17 @@ Follow these steps to get your application up and running:
    ```bash
    git clone https://github.com/fuga002/TaskForSYNEL.git
 
+## Database Setup
+- **Command to Set Up Database:** Run the following command in your terminal to set up the database:
+  ```bash
+  dotnet ef database update
+
+
+## Build and Run the Project
+- **Command to Build and Run:** Finally, build and run your project using the following command:
+  ```bash
+  dotnet run
+
 ## Setup Instructions
 
 ### 1. Configure Database Connection
@@ -50,16 +61,6 @@ Open the `appsettings.json` file in your project and locate the connection strin
 }
 
 
-Database Setup
-- **Command to Set Up Database:** Run the following command in your terminal to set up the database:
-  ```bash
-  dotnet ef database update
-
-
-Build and Run the Project
-- **Command to Build and Run:** Finally, build and run your project using the following command:
-  ```bash
-  dotnet run
 
 
 
