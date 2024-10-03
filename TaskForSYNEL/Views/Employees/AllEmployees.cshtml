@@ -1,0 +1,65 @@
+﻿@using Microsoft.AspNetCore.Mvc.TagHelpers
+@using TaskForSYNEL.Entities
+@model List<TaskForSYNEL.Entities.Employee>
+
+@{
+    string[] TableHeaders = new[]
+    {
+        nameof(Employee.PayrollNumber),
+        nameof(Employee.Forenames),
+        nameof(Employee.Surname),
+        nameof(Employee.DateOfBirth),
+        nameof(Employee.Telephone),
+        nameof(Employee.Mobile),
+        nameof(Employee.Address),
+        nameof(Employee.Address2),
+        nameof(Employee.Postcode),
+        nameof(Employee.EmailHome),
+        nameof(Employee.StartDate),
+    };
+}
+
+
+
+<div class="table">
+    
+    
+    <form enctype="multipart/form-data" asp-action="UploadCsv" method="post">
+        <input type="file" name="csvFile" />
+        <button type="submit" class="btn btn-primary">Upload CSV</button>
+    </form>
+
+    <table id="myTable" class="table table-bordered table-hover table-sm">
+        <thead>
+        <tr>
+            @foreach (var header in TableHeaders)
+            {
+                <th>
+                    @header
+                </th>
+            }
+        </tr>
+        </thead>
+        <tbody>
+        @if (Model is not null)
+        {
+            @foreach (var employee in Model)
+            {
+                <tr>
+                    <td>@employee.PayrollNumber</td>
+                    <td>@employee.Forenames</td>
+                    <td>@employee.Surname</td>
+                    <td>@employee.DateOfBirth</td>
+                    <td>@employee.Telephone</td>
+                    <td>@employee.Mobile</td>
+                    <td>@employee.Address</td>
+                    <td>@employee.Address2</td>
+                    <td>@employee.Postcode</td>
+                    <td>@employee.EmailHome</td>
+                    <td>@employee.StartDate</td>
+                </tr>
+            }
+        }
+        </tbody>
+    </table>
+</div>

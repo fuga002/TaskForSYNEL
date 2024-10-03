@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.11.35303.130
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaskForSYNEL", "TaskForSYNEL\TaskForSYNEL.csproj", "{08C74BD8-55A5-46A2-A21F-4336E4CCBC15}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{08C74BD8-55A5-46A2-A21F-4336E4CCBC15}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{08C74BD8-55A5-46A2-A21F-4336E4CCBC15}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{08C74BD8-55A5-46A2-A21F-4336E4CCBC15}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{08C74BD8-55A5-46A2-A21F-4336E4CCBC15}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {E91A7854-6CAD-4255-965D-190382108B77}
+	EndGlobalSection
+EndGlobal
