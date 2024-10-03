@@ -3,17 +3,17 @@
 This project is an employee management system built using ASP.NET Core 8 MVC. It supports CRUD operations and allows for importing employee records via CSV files, providing a user-friendly experience for managing employee data.
 
 <div>
-	##This main page, 
+	<p><strong>This main page</strong>, </br>
 	you can see all employee table and you can search,sort by employee propertities </br>
 	and also you can do pagination and Edit any employee</p>
 	<img src="./ResultImgs/AllEmployees.png"/>
 </div>
 <div>
-	##Searchin by name
+	<p><strong>Searchin by name</strong></p>
 	<img src="./ResultImgs/SearchingEmployee.png"/>
 </div>
 <div>
-	##Editing employee
+	<p><strong>Editing employee</strong></p>
 	<img src="./ResultImgs/EditingEmployee.png"/>
 </div>
 
