@@ -1,5 +1,60 @@
-This is for task
+# TaskForSYNEL
+
+This project is an employee management system built using ASP.NET Core 8 MVC. It supports CRUD operations and allows for importing employee records via CSV files, providing a user-friendly experience for managing employee data.
+
+## Technologies Used
+- **Backend:** ASP.NET Core 8 (MVC)
+- **CSV Parsing:** CsvHelper library
+- **Database:** SQL Server
+- **File Upload:** ASP.NET IFormFile
+
+## Prerequisites
+Before you begin, ensure you have the following installed:
+- [.NET Core SDK 8](https://dotnet.microsoft.com/download/dotnet/8.0)
+- [SQL Server](https://www.microsoft.com/en-us/sql-server/sql-server-downloads)
+
+## How to Run
+
+Follow these steps to get your application up and running:
+
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com/fuga002/TaskForSYNEL.git
+
+2. ## Setup Instructions
+
+### 1. Configure Database Connection
+
+Open the `appsettings.json` file in your project and locate the connection string section. Update it to point to your SQL Server database. It should look something like this:
+
+```json
+{
+  "ConnectionStrings": {
+    "DefaultConnection": "Server=your_server;Database=your_database;User Id=your_username;Password=your_password;"
+  }
+}
+
+3. To set up the database, run the following command in your terminal:
+### dotnet ef database update
+This command applies any pending migrations for your context to the database.
+
+4. Build and Run the Project
+Finally, build and run your project using the following command:
+### dotnet run
 
 <div>
+	<p>This main page, </br>
+	you can see all employee table and you can search,sort by employee propertities </br>
+	and also you can do pagination and Edit any employee</p>
 	<img src="./ResultImgs/AllEmployees.png"/>
 </div>
+<div>
+	<p>Searchin by name</p>
+	<img src="./ResultImgs/SearchingEmployee.png"/>
+</div>
+<div>
+	<p>Editing employee</p>
+	<img src="./ResultImgs/EditingEmployee.png"/>
+</div>
+
+
