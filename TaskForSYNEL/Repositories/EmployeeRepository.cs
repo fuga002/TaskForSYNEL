@@ -33,4 +33,10 @@ public class EmployeeRepository(AppDbContext appDbContext) : IEmployeeRepository
         await _appDbContext.Employees.AddRangeAsync(employeeList);
         await _appDbContext.SaveChangesAsync();
     }
+
+    public async Task Update(Employee employee)
+    {
+        _appDbContext.Employees.Update(employee);
+        await _appDbContext.SaveChangesAsync();
+    }
 }

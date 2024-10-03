@@ -7,4 +7,5 @@ public interface IEmployeeRepository
     Task<List<Employee>> GetAll();
     Task<Employee> GetById(Guid id);
     Task AddRange(List<Employee> employeeList);
+    Task Update(Employee employee);
 }

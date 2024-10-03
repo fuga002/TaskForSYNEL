@@ -1,0 +1,83 @@
+﻿@model EditEmployeeModel
+
+@{
+    ViewData["Title"] = "Edit Employee";
+    Guid id = ViewBag.Id;
+}
+
+<div class="container d-flex justify-content-center align-items-center" style="height: 100vh;">
+    <div class="card p-4" style="width: 400px;">
+        <h2 class="text-center">Edit Employee</h2>
+
+        <form asp-action="EditPost" asp-route-id="@id"  method="post">
+            <div class="form-group">
+                <label asp-for="PayrollNumber"></label>
+                <input asp-for="PayrollNumber" class="form-control" />
+                <span asp-validation-for="PayrollNumber" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Forenames"></label>
+                <input asp-for="Forenames" class="form-control" />
+                <span asp-validation-for="Forenames" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Surname"></label>
+                <input asp-for="Surname" class="form-control" />
+                <span asp-validation-for="Surname" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Telephone"></label>
+                <input asp-for="Telephone" class="form-control" />
+                <span asp-validation-for="Telephone" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Mobile"></label>
+                <input asp-for="Mobile" class="form-control" />
+                <span asp-validation-for="Mobile" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Address"></label>
+                <input asp-for="Address" class="form-control" />
+                <span asp-validation-for="Address" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Address2"></label>
+                <input asp-for="Address2" class="form-control" />
+                <span asp-validation-for="Address2" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Postcode"></label>
+                <input asp-for="Postcode" class="form-control" />
+                <span asp-validation-for="Postcode" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="EmailHome"></label>
+                <input asp-for="EmailHome" class="form-control" />
+                <span asp-validation-for="EmailHome" class="text-danger"></span>
+            </div>
+            <input type="hidden" asp-for="Telephone" />
+            <input type="hidden" asp-for="Mobile" />
+            <input type="hidden" asp-for="Address" />
+            <input type="hidden" asp-for="Address2" />
+            <input type="hidden" asp-for="Postcode" />
+            <input type="hidden" asp-for="EmailHome" />
+            <br/>
+            <button type="submit" class="btn btn-primary btn-block">Save</button>
+            <a asp-action="AllEmployees" class="btn btn-secondary btn-block">Cancel</a>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

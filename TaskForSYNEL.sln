@@ -3,7 +3,16 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.11.35303.130
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaskForSYNEL", "TaskForSYNEL\TaskForSYNEL.csproj", "{08C74BD8-55A5-46A2-A21F-4336E4CCBC15}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TaskForSYNEL", "TaskForSYNEL\TaskForSYNEL.csproj", "{08C74BD8-55A5-46A2-A21F-4336E4CCBC15}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaskFoSYNEL.Tests", "TaskFoSYNEL.Tests\TaskFoSYNEL.Tests.csproj", "{391460FF-BCC7-41AE-B22C-3839B3D8938E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ResultImgs", "ResultImgs", "{C7B6AE16-8C41-4C6A-BCF0-0683173B7DBF}"
+	ProjectSection(SolutionItems) = preProject
+		C:\Users\maruf\Downloads\AllEmployees.png = C:\Users\maruf\Downloads\AllEmployees.png
+		C:\Users\maruf\Downloads\EditingEmployee.png = C:\Users\maruf\Downloads\EditingEmployee.png
+		C:\Users\maruf\Downloads\SearchingEmployee.png = C:\Users\maruf\Downloads\SearchingEmployee.png
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +24,10 @@ Global
 		{08C74BD8-55A5-46A2-A21F-4336E4CCBC15}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{08C74BD8-55A5-46A2-A21F-4336E4CCBC15}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{08C74BD8-55A5-46A2-A21F-4336E4CCBC15}.Release|Any CPU.Build.0 = Release|Any CPU
+		{391460FF-BCC7-41AE-B22C-3839B3D8938E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{391460FF-BCC7-41AE-B22C-3839B3D8938E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{391460FF-BCC7-41AE-B22C-3839B3D8938E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{391460FF-BCC7-41AE-B22C-3839B3D8938E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

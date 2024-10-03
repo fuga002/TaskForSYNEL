@@ -2,8 +2,12 @@
 @using TaskForSYNEL.Entities
 @model List<TaskForSYNEL.Entities.Employee>
 
+
+
 @{
+
     string[] TableHeaders = new[]
+
     {
         nameof(Employee.PayrollNumber),
         nameof(Employee.Forenames),
@@ -16,50 +20,67 @@
         nameof(Employee.Postcode),
         nameof(Employee.EmailHome),
         nameof(Employee.StartDate),
+        "Action"
     };
+
+    string? message = ViewBag.Result;;
 }
 
 
 
-<div class="table">
-    
-    
-    <form enctype="multipart/form-data" asp-action="UploadCsv" method="post">
-        <input type="file" name="csvFile" />
-        <button type="submit" class="btn btn-primary">Upload CSV</button>
-    </form>
+<div class="wrapper">
 
-    <table id="myTable" class="table table-bordered table-hover table-sm">
-        <thead>
-        <tr>
-            @foreach (var header in TableHeaders)
+    <div class="smth">
+
+        <form class="form" enctype="multipart/form-data" asp-action="UploadCsv" method="post">
+            <input type="file" name="csvFile" />
+            <button type="submit" class="btn btn-primary">Upload CSV</button>
+        </form>
+
+        <div class="needed">
+            @if (!string.IsNullOrEmpty(message))
             {
-                <th>
-                    @header
-                </th>
+                <div class="example-alert">
+                    <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+                    <strong>@message</strong>
+                </div> 
             }
-        </tr>
+        </div>
+    </div>
+    <table id="myTable" class="table">
+        <thead>
+            <tr>
+                @foreach (var header in TableHeaders)
+
+                {
+                    <th>
+                        @header
+                    </th>
+                }
+            </tr>
         </thead>
         <tbody>
-        @if (Model is not null)
-        {
-            @foreach (var employee in Model)
+            @if (Model is not null)
             {
-                <tr>
-                    <td>@employee.PayrollNumber</td>
-                    <td>@employee.Forenames</td>
-                    <td>@employee.Surname</td>
-                    <td>@employee.DateOfBirth</td>
-                    <td>@employee.Telephone</td>
-                    <td>@employee.Mobile</td>
-                    <td>@employee.Address</td>
-                    <td>@employee.Address2</td>
-                    <td>@employee.Postcode</td>
-                    <td>@employee.EmailHome</td>
-                    <td>@employee.StartDate</td>
-                </tr>
+                @foreach (var employee in Model)
+
+                {
+                    <tr>
+                        <td>@employee.PayrollNumber</td>
+                        <td>@employee.Forenames</td>
+                        <td>@employee.Surname</td>
+                        <td>@employee.DateOfBirth</td>
+                        <td>@employee.Telephone</td>
+                        <td>@employee.Mobile</td>
+                        <td>@employee.Address</td>
+                        <td>@employee.Address2</td>
+                        <td>@employee.Postcode</td>
+                        <td>@employee.EmailHome</td>
+                        <td>@employee.StartDate</td>
+                        <td><a asp-action="Edit" asp-route-id="@employee.Id" class="btn btn-primary">Edit</a></td>
+                    </tr>
+                }
             }
-        }
         </tbody>
     </table>
 </div>

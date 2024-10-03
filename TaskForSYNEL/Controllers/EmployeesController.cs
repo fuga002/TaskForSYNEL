@@ -1,7 +1,9 @@
-﻿
+﻿using Mapster;
 using Microsoft.AspNetCore.Mvc;
-
+using Newtonsoft.Json;
+using TaskForSYNEL.Entities;
 using TaskForSYNEL.Managers;
+using TaskForSYNEL.Models;
 using Controller = Microsoft.AspNetCore.Mvc.Controller;
 
 namespace TaskForSYNEL.Controllers;
@@ -12,7 +14,15 @@ public class EmployeesController(EmployeeManager employeeManager) : Controller
 
     public async Task<IActionResult> AllEmployees()
     {
-        var employees = await _employeeManager.GetAllEmployees();
+        List<Employee> employees = employees = await _employeeManager.GetAllEmployees();
+
+        if (TempData["Result"] is not null)
+        {
+            var result = JsonConvert.DeserializeObject<string>(TempData["Result"]?.ToString()!);
+
+            ViewBag.Result = result!;
+        }
+
         return View(employees);
     }
     
@@ -20,14 +30,31 @@ public class EmployeesController(EmployeeManager employeeManager) : Controller
     [Microsoft.AspNetCore.Mvc.HttpPost]
     public async Task<IActionResult> UploadCsv(IFormFile csvFile)
     {
-
-       var employees = await _employeeManager.AddEmployeeList(csvFile);
-
-        return RedirectToAction("UploadCsv",employees);
+       var result = await _employeeManager.AddEmployeeList(csvFile);
+       TempData["Result"] = JsonConvert.SerializeObject(result);
+       return RedirectToAction("AllEmployees");
     }
 
-    public IActionResult Edit(Guid id)
+    public async Task<IActionResult> Edit(Guid id)
     {
-        throw new NotImplementedException();
+        var employee = await _employeeManager.GetEmployeeById(id);
+
+        var model = employee.Adapt<EditEmployeeModel>();
+
+        ViewBag.Id = employee.Id;
+
+        return View(model);
+    }
+
+
+    [HttpPost]
+    public async Task<IActionResult> EditPost(Guid id,EditEmployeeModel model)
+    {
+        var result = await _employeeManager.EditEmployee(id, model);
+
+        TempData["Result"] = JsonConvert.SerializeObject(result);
+
+        return RedirectToAction("AllEmployees");
+
     }
 }
