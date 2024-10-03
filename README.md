@@ -34,13 +34,17 @@ Open the `appsettings.json` file in your project and locate the connection strin
   }
 }
 
-3. To set up the database, run the following command in your terminal:
-### dotnet ef database update
-This command applies any pending migrations for your context to the database.
+## Database Setup
+- **Command to Set Up Database:** Run the following command in your terminal to set up the database:
+  ```bash
+  dotnet ef database update
 
-4. Build and Run the Project
-Finally, build and run your project using the following command:
-### dotnet run
+
+## Build and Run the Project
+- **Command to Build and Run:** Finally, build and run your project using the following command:
+  ```bash
+  dotnet run
+
 
 <div>
 	<p>This main page, </br>
